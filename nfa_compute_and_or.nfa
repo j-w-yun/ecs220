@@ -1,0 +1,22 @@
+// NFA recognizing { x in {0,1}* | (3rd-to-last bit of x is 0 and 6th-to-last bit of x is 0) or last bit of x is 1}
+states =          {q1, q2, q3, q4, q5, q6, q7}
+input_alphabet =  {0, 1}
+start_state =     q1
+accept_states =   {q7}
+delta =
+    q1, 0 -> {q1, q2};
+    q1, 1 -> {q1, q7};
+    
+    q2, 0 -> q3;
+    q2, 1 -> q3;
+    
+    q3, 0 -> q4;
+    q3, 1 -> q4;
+    
+    q4, 0 -> q5;
+
+    q5, 0 -> q6;
+    q5, 1 -> q6;
+    
+    q6, 0 -> q7;
+    q6, 1 -> q7;
